@@ -1,8 +1,6 @@
 # express-request-transfer
 
-express-request-transfer brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express.
-
-Call `req.transfer` to transfer an incoming request to another of your routes without a browser redirect _(incoming data optionally included)_.
+express-request-transfer brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express. Call `req.transfer` to transfer an incoming request to another of your routes without a browser redirect _(incoming data optionally included)_.
 
 ## Why is this useful
 
