@@ -1,7 +1,7 @@
 {
   "name": "express-request-transfer",
   "version": "1.0.0",
-  "description": "Brings Server.Transfer from C# to node/express js",
+  "description": "Brings the power of C# Server.Transfer to node/express js",
   "main": "index.js",
   "repository": {
     "type": "git",
