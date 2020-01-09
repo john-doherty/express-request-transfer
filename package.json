@@ -1,0 +1,28 @@
+{
+  "name": "express-request-transfer",
+  "version": "1.0.0",
+  "description": "Brings Server.Transfer from C# to node/express js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-doherty/express-request-transfer.git"
+  },
+  "keywords": [
+    "express",
+    "server",
+    "request",
+    "transfer"
+  ],
+  "author": "John Doherty <contact@johndoherty.info> (www.johndoherty.info)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-doherty/express-request-transfer/issues"
+  },
+  "homepage": "https://github.com/john-doherty/express-request-transfer#readme",
+  "dependencies": {
+    "supertest": "^1.2.0"
+  },
+  "devDependencies": {
+    "express": "^4.13.4"
+  }
+}
