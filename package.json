@@ -1,7 +1,7 @@
 {
   "name": "express-request-transfer",
-  "version": "1.0.0",
-  "description": "Brings the power of C# Server.Transfer to node/express js",
+  "version": "1.0.1",
+  "description": "Brings the power of Server.Transfer from C#  to express",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,7 +11,8 @@
     "express",
     "server",
     "request",
-    "transfer"
+    "transfer",
+    "middleware"
   ],
   "author": "John Doherty <contact@johndoherty.info> (www.johndoherty.info)",
   "license": "MIT",

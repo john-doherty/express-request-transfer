@@ -1,16 +1,14 @@
 # express-request-transfer
 
-express-request-transfer brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express. Call `req.transfer` to transfer an incoming request to another of your routes without a browser redirect _(incoming data optionally included)_.
+Express middleware that brings the power of [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) from C# to node/express.
+
+Call `req.transfer` to transfer an incoming request to another route without a browser redirect and incoming data optionally included.
 
 ## Why is this useful
 
-__res.redirect__
+`res.redirect` sends a HTTP `301` or `302` message to the browser asking it to make another request to a new URL.
 
-Sends a HTTP 301 or 302 message to the browser asking it to request a new URL.
-
-__req.transfer(_internalPath_, _preserveData_)__
-
-Returns the content of another route to the browser without redirecting the client.
+`req.transfer(internalPath, preserveData)` internally transfers the incoming request to another route without redirecting the client. The browser URL remains the same and you remove the need for an additional request.
 
 ## Installation
 
