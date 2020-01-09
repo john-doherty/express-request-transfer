@@ -6,9 +6,13 @@ Call `req.transfer` to transfer an incoming request to another of your routes wi
 
 ## Why is this useful
 
-`res.redirect` sends a HTTP 301 or 302 message to the browser asking it to request a new URL.
+__res.redirect__
 
-`req.transfer(internalPath, preserveData)` returns the content of another without redirecting the browser.
+Sends a HTTP 301 or 302 message to the browser asking it to request a new URL.
+
+__req.transfer(_internalPath_, _preserveData_)__
+
+Returns the content of another route to the browser without redirecting the client.
 
 ## Installation
 
@@ -39,7 +43,7 @@ app.post('/', function(req, res){
 
 ```
 
-If the user requested http://localhost route 2 would receive the request, but code execution would switch to route 1 and the response of route 1 would be returned to the client.
+If the user requested http://localhost _route 2_ would receive the request and switch code execution to _route 1_. The response from _route 1_ would be returned to the client.
 
 ## Contributing
 
