@@ -1,6 +1,6 @@
 {
   "name": "express-request-transfer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Brings the power of Server.Transfer from C#  to express",
   "main": "index.js",
   "repository": {
@@ -12,6 +12,9 @@
     "server",
     "request",
     "transfer",
+    "redirect",
+    "querystring",
+    "form variables",
     "middleware"
   ],
   "author": "John Doherty <contact@johndoherty.info> (www.johndoherty.info)",
