@@ -1,14 +1,14 @@
 # express-request-transfer
 
-Express middleware that brings the power of [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) from C# to node/express.
+Adds the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express.
 
-Call `req.transfer` to transfer an incoming request to another route without a browser redirect and incoming data optionally included.
+Call `req.transfer('/new-route')` from within one of your routes to transfer the request without an additional request _(optionally preserves data)_.
 
 ## Why is this useful
 
-`res.redirect` sends a HTTP `301` or `302` message to the browser asking it to make another request to a new URL.
+`res.redirect('/new-route')` sends a HTTP `301` or `302` response to the browser. This causes the browser to make another request to the server and modifies the browser URL.
 
-`req.transfer(internalPath, preserveData)` internally transfers the incoming request to another route without redirecting the client. The browser URL remains the same and you remove the need for an additional request.
+`req.transfer(internalPath, preserveData)` transfers the request to another route internally, without redirecting the browser, thus reducing server load and preserving the browser URL.
 
 ## Installation
 
@@ -39,7 +39,7 @@ app.post('/', function(req, res){
 
 ```
 
-If the user requested http://localhost _route 2_ would receive the request and switch code execution to _route 1_. The response from _route 1_ would be returned to the client.
+If the user requested http://localhost _route 2_ would receive the request and switch code execution to _route 1_. The response from _route 1_ would be returned to the client. The users browser URL would be unchanged.
 
 ## Contributing
 
@@ -51,7 +51,7 @@ If the user requested http://localhost _route 2_ would receive the request and s
 
 ## Star the repo
 
-If you find this useful please :star2: the repo as it helps me prioritize bug fixes.
+If you find this useful :star2: the repo, it helps me prioritize support.
 
 ## History
 
