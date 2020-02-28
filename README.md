@@ -1,6 +1,8 @@
 # express-request-transfer
 
-Brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express. `req.transfer('/new-route')` will transfer an incoming request from one route to another, without a redirect.
+Brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express.
+
+`req.transfer('/new-route')` will transfer an incoming request from one route to another, without a redirect.
 
 ## Great, but why?
 
@@ -13,7 +15,7 @@ What's difference between `req.transfer` and `res.redirect`?
 * you don't need to preserve Query String and Form Variables
 * you want the user to see the new redirected URL _(and maybe bookmark it)_
 
-`req.transfer(internalPath, preserveData)` should be used when:
+`req.transfer('/new-route', true)` should be used when:
 
 * you want to transfer current request to another page on the same server
 * you want to preserve server resources and avoid unnecessary round-trips to the server
@@ -44,7 +46,7 @@ app.get('/api/time', function(req, res){
 
 // route 2
 app.post('/', function(req, res){
-    req.transfer('/api/time');
+    req.transfer('/api/time'); // add `true` to include form and query data
 });
 
 ```
