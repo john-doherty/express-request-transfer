@@ -1,14 +1,26 @@
 # express-request-transfer
 
-Adds the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express.
+Brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express.
 
-Call `req.transfer('/new-route')` from within one of your routes to transfer the request without an additional request _(optionally preserves data)_.
+Call `req.transfer('/new-route')` to transfers a request from one route to another without a roundtrip.
 
-## Why is this useful
+## Great, but why?
 
-`res.redirect('/new-route')` sends a HTTP `301` or `302` response to the browser. This causes the browser to make another request to the server and modifies the browser URL.
+What's difference between `req.transfer` and `res.redirect`?
 
-`req.transfer(internalPath, preserveData)` transfers the request to another route internally, without redirecting the browser, thus reducing server load and preserving the browser URL.
+`res.redirect('/new-route')` should be used when:
+
+* you want to redirect the request to another server
+* you don't care about additional round-trips to the server
+* you don't need to preserve Query String and Form Variables
+* you want the user to see the new redirected URL _(and maybe bookmark it)_
+
+`req.transfer(internalPath, preserveData)` should be used when:
+
+* you want to transfer current request to another page on the same server
+* you want to preserve server resources and avoid unnecessary round-trips to the server
+* you want to preserve Query String and Form Variables _(optional)_
+* you don't need the user to see the real URL in the browser
 
 ## Installation
 
