@@ -1,6 +1,6 @@
 # express-request-transfer
 
-Middleware that brings the power of [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) from C# to express `req.transfer('/new-route', preserveData)`
+The power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) for express `req.transfer('/new-route', preserveData)`
 
 ## How is this different from `res.redirect`?
 
