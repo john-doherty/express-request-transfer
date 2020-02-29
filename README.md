@@ -1,10 +1,8 @@
 # express-request-transfer
 
-Brings the power of [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) from C# to express.
+Middleware that brings the power of [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) from C# to express `req.transfer('/new-route', preserveData)`
 
-Allows you to transfer a request from one route to another without a redirect.
-
-## What's difference between `req.transfer` and `res.redirect`?
+## How is this different from `res.redirect`?
 
 Use `res.redirect('/new-route')` when:
 
@@ -13,12 +11,12 @@ Use `res.redirect('/new-route')` when:
 * you don't need to preserve Query String and Form Variables
 * you want the user to see the new redirected URL _(and maybe bookmark it)_
 
-Use `req.transfer('/new-route', true)` when:
+Use `req.transfer('/new-route', preserveData)` when:
 
-* you want to transfer current request to another page on the same server
-* you want to preserve server resources and avoid unnecessary round-trips to the server
+* you want to transfer current request to another URL on the same server
+* you want to reduce server load by avoiding unnecessary round-trips
 * you want to preserve Query String and Form Variables _(optional)_
-* you don't need the user to see the real URL in the browser
+* you don't need the user to see the final URL in their browser
 
 ## Installation
 
