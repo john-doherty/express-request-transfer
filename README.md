@@ -6,14 +6,14 @@ Brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previo
 
 ## What's difference between `req.transfer` and `res.redirect`?
 
-`res.redirect('/new-route')` should be used when:
+Use `res.redirect('/new-route')` when:
 
 * you want to redirect the request to another server
 * you don't care about additional round-trips to the server
 * you don't need to preserve Query String and Form Variables
 * you want the user to see the new redirected URL _(and maybe bookmark it)_
 
-`req.transfer('/new-route', true)` should be used when:
+Use `req.transfer('/new-route', true)` when:
 
 * you want to transfer current request to another page on the same server
 * you want to preserve server resources and avoid unnecessary round-trips to the server
