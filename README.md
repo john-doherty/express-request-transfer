@@ -4,9 +4,7 @@ Brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previo
 
 `req.transfer('/new-route')` will transfer an incoming request from one route to another, without a redirect.
 
-## Great, but why?
-
-What's difference between `req.transfer` and `res.redirect`?
+## What's difference between `req.transfer` and `res.redirect`?
 
 `res.redirect('/new-route')` should be used when:
 
