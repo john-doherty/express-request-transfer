@@ -1,8 +1,6 @@
 # express-request-transfer
 
-Brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express.
-
-`req.transfer('/new-route')` will transfer an incoming request from one route to another, without a redirect.
+Brings the power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) to express, allowing you to transfer a request from one route to another without a redirect.
 
 ## What's difference between `req.transfer` and `res.redirect`?
 
