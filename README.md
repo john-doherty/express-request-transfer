@@ -42,7 +42,12 @@ app.get('/api/time', function(req, res){
 
 // route 2
 app.post('/', function(req, res){
-    req.transfer('/api/time'); // add `true` to include form and query data
+
+    // transfer request without form/query data
+    req.transfer('/api/time');
+
+    // transfer request with incoming form/query data
+    // req.transfer('/api/time', true);
 });
 ```
 
