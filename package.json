@@ -3,6 +3,9 @@
   "version": "1.1.2",
   "description": "Brings the power of Server.Transfer from C#  to express",
   "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/jasmine-node tests  --verbose --color --forceexit --junitreport --captureExceptions"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/john-doherty/express-request-transfer.git"
@@ -27,6 +30,7 @@
     "supertest": "^1.2.0"
   },
   "devDependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jasmine-node": "^3.0.0"
   }
 }
