@@ -1,6 +1,6 @@
 {
   "name": "express-request-transfer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Brings the power of Server.Transfer from C#  to express",
   "main": "index.js",
   "scripts": {

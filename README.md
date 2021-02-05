@@ -1,5 +1,7 @@
 # express-request-transfer
 
+![Build](https://github.com/orca-scan/express-request-transfer/workflows/Build/badge.svg)
+
 The power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) for node/express `req.transfer('/new-route', preserveData)`
 
 ## How is this different from `res.redirect`?
