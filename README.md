@@ -1,6 +1,6 @@
 # express-request-transfer
 
-The power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) for express `req.transfer('/new-route', preserveData)`
+The power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) for node/express `req.transfer('/new-route', preserveData)`
 
 ## How is this different from `res.redirect`?
 
@@ -21,7 +21,7 @@ Use `req.transfer('/new-route', preserveData)` when:
 ## Installation
 
 ```bash
-$ npm install --save express-request-transfer
+npm install --save express-request-transfer
 ```
 
 ## Usage
@@ -44,7 +44,6 @@ app.get('/api/time', function(req, res){
 app.post('/', function(req, res){
     req.transfer('/api/time'); // add `true` to include form and query data
 });
-
 ```
 
 If the user requested http://localhost _route 2_ would receive the request and switch code execution to _route 1_. The response from _route 1_ would be returned to the client. The users browser URL would be unchanged.
@@ -57,14 +56,10 @@ If the user requested http://localhost _route 2_ would receive the request and s
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request
 
-## Star the repo
-
-If you find this useful :star2: the repo, it helps me prioritize support.
-
 ## History
 
-For change-log, check [releases](https://github.com/john-doherty/express-request-transfer/releases).
+For change-log, check [releases](https://github.com/orca-scan/express-request-transfer/releases).
 
 ## License
 
-Licensed under [MIT License](LICENSE) &copy; [John Doherty](https://twitter.com/mrJohnDoherty)
+Licensed under [ISC License](LICENSE) &copy; Orca Scan - [Barcode Tracking, Simplified.](https://orcascan.com)
