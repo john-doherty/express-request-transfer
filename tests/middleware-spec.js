@@ -61,4 +61,30 @@ describe('express-request-transfer', function () {
             .end();
     });
 
+    it('should return headers, status, body etc', function (done) {
+
+        var headerName = 'x-test-header';
+        var headerValue = String(new Date().getTime());
+        var status = 409;
+        var body = { firstName: 'Buzz', lastName: 'Lightyear' };
+
+        app.get('/internal', function(req, res){
+            res.set(headerName, headerValue);
+            res.status(status);
+            res.send(body);
+        });
+
+        app.get('/external', function(req, res){
+            req.transfer('/internal', true); 
+        });
+
+        return request(app)
+            .get('/external')
+            .then(function(res) {
+                expect(res.statusCode).toEqual(status)
+                expect(res.get(headerName)).toEqual(headerValue);
+                expect(res.body).toEqual(body);
+                done()
+            });
+    });
 });
