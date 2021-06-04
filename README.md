@@ -69,4 +69,4 @@ For change-log, check [releases](https://github.com/orca-scan/express-request-tr
 
 ## License
 
-Licensed under [ISC License](LICENSE) &copy; Orca Scan - [Barcode Tracking, Simplified.](https://orcascan.com)
+Licensed under [ISC License](LICENSE) &copy; Orca Scan, the [Barcode Scanner app for iOS and Android](https://orcascan.com).

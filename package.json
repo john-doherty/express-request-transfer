@@ -1,7 +1,7 @@
 {
   "name": "express-request-transfer",
-  "version": "1.2.1",
-  "description": "Brings the power of Server.Transfer from C#  to express",
+  "version": "1.2.2",
+  "description": "Brings the power of Server.Transfer from C# to express",
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/jasmine-node tests  --verbose --color --forceexit --junitreport --captureExceptions"
