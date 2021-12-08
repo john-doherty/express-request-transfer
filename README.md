@@ -1,6 +1,17 @@
 # express-request-transfer
 
-![Build](https://github.com/orca-scan/express-request-transfer/workflows/Build/badge.svg)
+[![Build Status][build-status]][build-url]
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+[![Twitter Follow][twitter-image]][twitter-url]
+
+[build-status]:https://github.com/orca-scan/express-request-transfer/workflows/Build/badge.svg
+[build-url]:https://github.com/john-doherty/express-request-transfer/actions
+[npm-image]:http://img.shields.io/npm/v/express-request-transfer.svg
+[npm-url]:https://npmjs.org/package/express-request-transfer
+[downloads-image]:http://img.shields.io/npm/dm/express-request-transfer.svg
+[twitter-image]:https://img.shields.io/twitter/follow/mrjohndoherty.svg?style=social&label=Follow%20me
+[twitter-url]:https://twitter.com/mrjohndoherty
 
 The power of C# [Server.Transfer](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) for node/express `req.transfer('/new-route', preserveData)`
 
@@ -65,8 +76,5 @@ If the user requested http://localhost _route 2_ would receive the request and s
 
 ## History
 
-For change-log, check [releases](https://github.com/orca-scan/express-request-transfer/releases).
+For change-log, check [releases](https://github.com/john-doherty/express-request-transfer/releases).
 
-## License
-
-Licensed under [ISC License](LICENSE) &copy; Orca Scan, the [Barcode Scanner app for iOS and Android](https://orcascan.com).

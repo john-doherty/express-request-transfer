@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orca-scan/express-request-transfer.git"
+    "url": "git+https://github.com/john-doherty/express-request-transfer.git"
   },
   "keywords": [
     "express",
@@ -23,9 +23,9 @@
   "author": "https://orcascan.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/orca-scan/express-request-transfer/issues"
+    "url": "https://github.com/john-doherty/express-request-transfer/issues"
   },
-  "homepage": "https://github.com/orca-scan/express-request-transfer#readme",
+  "homepage": "https://github.com/john-doherty/express-request-transfer#readme",
   "dependencies": {
     "supertest": "^1.2.0"
   },
