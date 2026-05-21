@@ -1,0 +1,18 @@
+{
+  "spec_dir": "tests",
+  "spec_files": [
+    "!**/db-required/*.spec.js",
+    "**/*.spec.?(m)js"
+  ],
+  "helpers": [
+    "jasmine/reporter.js",
+    "jasmine/timeout.js"
+  ],
+  "env": {
+    "stopSpecOnExpectationFailure": false,
+    "random": true,
+    "failFast": false,
+    "stopOnSpecFailure": false,
+    "hideDisabled": true
+  }
+}
