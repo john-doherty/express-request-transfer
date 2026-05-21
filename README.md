@@ -58,11 +58,12 @@ app.post('/', function(req, res){
 });
 ```
 
-If the user requested http://localhost _route 2_ would receive the request and switch code execution to _route 1_. The response from _route 1_ would be returned to the client. The users browser URL would be unchanged.
+If a user requests http://localhost, _route 2_ receives the request and switches code execution to _route 1_. The response from _route 1_ is returned to the client, and the user's browser URL remains unchanged.
 
 ## Notes
 
 * Responses are transferred for text, JSON, binary payloads, and rendered views (for example via `res.render('form', model)`).
+* `authorization` and `proxy-authorization` headers are not forwarded to destination routes.
 * Internal transfer requests timeout after 30s by default. Override with `EXPRESS_REQUEST_TRANSFER_TIMEOUT_MS`.
 
 ## Contributing
