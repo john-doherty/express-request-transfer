@@ -22,7 +22,7 @@ Use `req.transfer('/new-route', preserveData)` when:
 
 * you want to transfer current request to another URL on the same server
 * you want to reduce server load by avoiding unnecessary round-trips
-* you want to preserve Query String and Form Variables _(optional)_
+* you want to preserve Query String, Form Variables & Cookies _(optional)_
 * you don't need the user to see the final URL in their browser
 
 ## Installation
@@ -63,7 +63,7 @@ If a user requests http://localhost, _route 2_ receives the request and switches
 ## Notes
 
 * Responses are transferred for text, JSON, binary payloads, and rendered views
-* `authorization` and `proxy-authorization` headers are not forwarded to destination routes
+* For security, transfers only allow internal route paths
 * Transfer requests timeout after 30s by default. Override with `EXPRESS_REQUEST_TRANSFER_TIMEOUT_MS`
 
 ## Contributing
