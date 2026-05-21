@@ -62,9 +62,9 @@ If a user requests http://localhost, _route 2_ receives the request and switches
 
 ## Notes
 
-* Responses are transferred for text, JSON, binary payloads, and rendered views (for example via `res.render('form', model)`).
-* `authorization` and `proxy-authorization` headers are not forwarded to destination routes.
-* Internal transfer requests timeout after 30s by default. Override with `EXPRESS_REQUEST_TRANSFER_TIMEOUT_MS`.
+* Responses are transferred for text, JSON, binary payloads, and rendered views
+* `authorization` and `proxy-authorization` headers are not forwarded to destination routes
+* Transfer requests timeout after 30s by default. Override with `EXPRESS_REQUEST_TRANSFER_TIMEOUT_MS`
 
 ## Contributing
 
