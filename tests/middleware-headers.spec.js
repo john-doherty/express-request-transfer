@@ -32,7 +32,7 @@ describe('express-request-transfer (headers)', function () {
 
         app.get('/internal', function(req, res){
             expect(req.headers.authorization).toBeUndefined();
-            expect(req.headers.cookie).toBeUndefined();
+            expect(req.headers.cookie).toEqual('sid=123');
             expect(req.headers['x-custom-header']).toEqual('custom-value');
             expect(req.headers['accept-language']).toEqual('en-GB');
             expect(req.headers['x-request-id']).toEqual('abc-123');
