@@ -2,7 +2,6 @@
 
 [![Build Status][build-status]][build-url]
 [![NPM version][npm-image]][npm-url]
-[![Twitter Follow][twitter-image]][twitter-url]
 
 [build-status]:https://github.com/orca-scan/express-request-transfer/workflows/Build/badge.svg
 [build-url]:https://github.com/john-doherty/express-request-transfer/actions
@@ -67,6 +66,11 @@ app.post('/', function(req, res){
 ```
 
 If the user requested http://localhost _route 2_ would receive the request and switch code execution to _route 1_. The response from _route 1_ would be returned to the client. The users browser URL would be unchanged.
+
+## Notes
+
+* Responses are transferred for text, JSON, binary payloads, and rendered views (for example via `res.render('form', model)`).
+* Internal transfer requests timeout after 30s by default. Override with `EXPRESS_REQUEST_TRANSFER_TIMEOUT_MS`.
 
 ## Contributing
 
