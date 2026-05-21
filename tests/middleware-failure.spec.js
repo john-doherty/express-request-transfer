@@ -5,7 +5,7 @@ var requestTransfer = require('../lib/express-request-transfer.js');
 
 var app = null;
 
-describe('express-request-transfer', function () {
+describe('express-request-transfer (failure)', function () {
 
     // before each test
     beforeEach(function () {
@@ -26,39 +26,6 @@ describe('express-request-transfer', function () {
     // after each test
     afterEach(function () {
         app = null;
-    });
-
-    it('should add .transfer to request object', function (done) {
-
-        app.get('/test', function(req, res){
-            expect(req.transfer).toBeDefined();
-            done()
-        });
-
-        request(app).get('/test').end();
-    });
-
-    it('should transfer form variables', function (done) {
-
-        var field1 = String(new Date().getTime());
-        var field2 = String(field1 *1000);
-
-        app.post('/internal', function(req, res){
-            expect(req.body.field1).toEqual(field1);
-            expect(req.body.field2).toEqual(field2);
-            done()
-        });
-
-        app.post('/external', function(req, res){
-            req.transfer('/internal', true); 
-        });
-
-        request(app)
-            .post('/external')
-            .type('form')
-            .send({ field1: field1 })
-            .send({ field2: field2 })
-            .end();
     });
 
     it('should complete outer request on internal route errors', function (done) {
@@ -115,59 +82,6 @@ describe('express-request-transfer', function () {
             .then(function(res) {
                 expect(res.statusCode).toEqual(500);
                 expect(res.text).toEqual('Internal transfer failed');
-                done();
-            });
-    });
-
-    it('should only forward safe request headers when preserving data', function (done) {
-
-        app.get('/internal', function(req, res){
-            expect(req.headers.authorization).toBeUndefined();
-            expect(req.headers.cookie).toBeUndefined();
-            expect(req.headers['x-custom-header']).toEqual('custom-value');
-            expect(req.headers['accept-language']).toEqual('en-GB');
-            expect(req.headers['x-request-id']).toEqual('abc-123');
-
-            res.set('x-safe-response-header', 'true');
-            res.status(200);
-            res.send('ok');
-        });
-
-        app.get('/external', function(req, res){
-            req.transfer('/internal', true);
-        });
-
-        request(app)
-            .get('/external')
-            .set('authorization', 'Bearer token')
-            .set('cookie', 'sid=123')
-            .set('x-custom-header', 'custom-value')
-            .set('accept-language', 'en-GB')
-            .set('x-request-id', 'abc-123')
-            .then(function(res) {
-                expect(res.statusCode).toEqual(200);
-                expect(res.get('x-safe-response-header')).toEqual('true');
-                done();
-            });
-    });
-
-    it('should not trust client transfer guard headers', function (done) {
-
-        app.get('/internal', function(req, res){
-            res.status(200);
-            res.send('ok');
-        });
-
-        app.get('/external', function(req, res){
-            req.transfer('/internal', false);
-        });
-
-        request(app)
-            .get('/external')
-            .set('x-express-request-transfer', '1')
-            .then(function(res) {
-                expect(res.statusCode).toEqual(200);
-                expect(res.text).toEqual('ok');
                 done();
             });
     });
@@ -230,26 +144,6 @@ describe('express-request-transfer', function () {
             }, function(error) {
                 restoreTimeout();
                 done(error);
-            });
-    });
-
-    it('should transfer empty responses', function (done) {
-
-        app.get('/internal', function(req, res){
-            res.status(204);
-            res.end();
-        });
-
-        app.get('/external', function(req, res){
-            req.transfer('/internal', false);
-        });
-
-        request(app)
-            .get('/external')
-            .then(function(res) {
-                expect(res.statusCode).toEqual(204);
-                expect(res.text).toEqual('');
-                done();
             });
     });
 });
