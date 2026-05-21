@@ -61,6 +61,29 @@ describe('express-request-transfer (core)', function () {
             .end();
     });
 
+    it('should preserve query parameters when preserving data', function (done) {
+
+        app.get('/internal', function(req, res){
+            res.status(200);
+            res.send({
+                search: req.query.search,
+                page: req.query.page
+            });
+        });
+
+        app.get('/external', function(req, res){
+            req.transfer('/internal', true);
+        });
+
+        request(app)
+            .get('/external?search=orcascan&page=2')
+            .then(function(res) {
+                expect(res.statusCode).toEqual(200);
+                expect(res.body).toEqual({ search: 'orcascan', page: '2' });
+                done();
+            });
+    });
+
     it('should transfer empty responses', function (done) {
 
         app.get('/internal', function(req, res){

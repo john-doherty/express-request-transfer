@@ -31,7 +31,8 @@ describe('express-request-transfer (headers)', function () {
     it('should only forward safe request headers when preserving data', function (done) {
 
         app.get('/internal', function(req, res){
-            expect(req.headers.authorization).toBeUndefined();
+            expect(req.headers.authorization).toEqual('Bearer token');
+            expect(req.headers['proxy-authorization']).toEqual('Basic YTpi');
             expect(req.headers.cookie).toEqual('sid=123');
             expect(req.headers['x-custom-header']).toEqual('custom-value');
             expect(req.headers['accept-language']).toEqual('en-GB');
@@ -49,6 +50,7 @@ describe('express-request-transfer (headers)', function () {
         request(app)
             .get('/external')
             .set('authorization', 'Bearer token')
+            .set('proxy-authorization', 'Basic YTpi')
             .set('cookie', 'sid=123')
             .set('x-custom-header', 'custom-value')
             .set('accept-language', 'en-GB')
