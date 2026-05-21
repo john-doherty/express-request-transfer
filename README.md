@@ -1,14 +1,7 @@
 # express-request-transfer
 
-[![Build Status][build-status]][build-url]
-[![NPM version][npm-image]][npm-url]
-
-[build-status]:https://github.com/orca-scan/express-request-transfer/workflows/Build/badge.svg
-[build-url]:https://github.com/john-doherty/express-request-transfer/actions
-[npm-image]:http://img.shields.io/npm/v/express-request-transfer.svg
-[npm-url]:https://npmjs.org/package/express-request-transfer
-[twitter-image]:https://img.shields.io/twitter/follow/mrjohndoherty.svg?style=social&label=Follow
-[twitter-url]:https://twitter.com/mrjohndoherty
+[![Build Status](https://github.com/john-doherty/express-request-transfer/actions/workflows/ci.yml/badge.svg)](https://github.com/john-doherty/express-request-transfer/actions/workflows/ci.yml)
+[![NPM version](https://img.shields.io/npm/v/express-request-transfer.svg)](https://www.npmjs.com/package/express-request-transfer)
 
 [Server.Transfer in C#](https://docs.microsoft.com/en-us/previous-versions/iis/6.0-sdk/ms525800(v%3Dvs.90)) allows an incoming request to one route, to be transfered to another without using 30x redirects _(saving a client/server roundtrip)_. This module brings the same feature to express:
 
